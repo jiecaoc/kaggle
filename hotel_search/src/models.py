@@ -1,6 +1,10 @@
-# This package include the core methods
-# to train the model.
-# by Jiecao Chen
+# -*- coding: utf-8 -*-
+"""
+This package include the core methods
+to train the model.
+@author: jiecaoc
+"""
+
 
 import numpy as np
 
