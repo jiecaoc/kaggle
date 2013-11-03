@@ -1,0 +1,6 @@
+{
+    "model_path":      "/Users/jiecaoc/kaggleData/basicPythonBenchmark.pickle",
+    "submission_path": "/Users/jiecaoc/kaggleData/basicPythonBenchmark.csv",
+    "train_path":      "/Users/jiecaoc/kaggleData/data/train.csv",
+    "test_path":       "/Users/jiecaoc/kaggleData/data/test.csv"
+}
