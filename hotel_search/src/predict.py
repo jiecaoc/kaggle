@@ -1,7 +1,7 @@
 import data_io
 
 def main():
-    print("Reading test data")
+    print("Reading test data ...")
     test = data_io.read_test()
     test.fillna(0, inplace=True)
     
@@ -10,15 +10,14 @@ def main():
 
     features = test[feature_names].values
 
-    print("Loading the classifier")
-    classifier = data_io.load_model()
+    print("Loading the Regressor ...")
+    regressor = data_io.load_model()
 
-    print("Making predictions")
-    predictions = classifier.predict_proba(features)[:,1]
+    print("Making predictions ...")
+    predictions = regressor.predict(features)
     predictions = list(-1.0*predictions)
     recommendations = zip(test["srch_id"], test["prop_id"], predictions)
-
-    print("Writing predictions to file")
+    print("Writing predictions to file ...")
     data_io.write_submission(recommendations)
 
 if __name__=="__main__":

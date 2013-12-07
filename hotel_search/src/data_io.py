@@ -4,6 +4,7 @@ import os
 import json
 import pickle
 import pandas as pd
+import commands
 
 def get_paths():
     paths = json.loads(open("SETTINGS.json").read())
@@ -39,3 +40,15 @@ def write_submission(recommendations, submission_file=None):
     writer = csv.writer(open(submission_path, "w"), lineterminator="\n")
     writer.writerow(("SearchId", "PropertyId"))
     writer.writerows(rows)
+    #commands.getstatus("enscript --language=html " + submission_path + " -o" + submission_path + '.html' )
+    #commands.getoutput('open ' + submission_path + '.html')
+
+def save_processed_data(samples):
+    out_path = get_paths()["train_path"] + "bak"
+    pickle.dump(samples, open(out_path, "w"))
+    
+def load_processed_data():
+    in_path = get_paths()["train_path"] + "bak"
+    return pickle.load(open(in_path))
+    
+        
